@@ -64,18 +64,13 @@ print()
 
 
 #4  Pyramid of Cubes - (10pts) If you stack boxes in a pyramid, the top row would have 1 box, the second row would have two, the third row would have 3 and so on. Make a recursive function which calculates the TOTAL NUMBER OF BOXES for a pyramid of boxes n high.  For instance, a pyramid that is 3 high would have a total of 6 boxes. A pyramid 4 high would have 10.
-def four(n, boxnum, index):
-    pass
 
-def blah(n_height, boxes, index):
-    if index == 0:
-        boxes = 0
+def four(n_height, boxes, index):
     boxes += n_height
-
     if n_height != 0:
-        blah(n_height - 1, boxes, index + 1)
-
+        four(n_height - 1, boxes, index + 1)
     elif n_height == 0:
         print("There would be", boxes, "boxes for that number of rows")
 
-blah(int(input("Enter a number of rows: ")), 0, 0)
+n_height = int(input("Enter a number of rows (height): "))
+four(n_height, 0, 0)
